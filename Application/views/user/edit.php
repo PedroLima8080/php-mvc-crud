@@ -1,5 +1,5 @@
 <div class="mt-5 w-50 mx-auto">
-    <form action="../update" method="POST">
+    <form action='<?php echo redirectBlade('user/update') ?>' method="POST">
         <h1 class="text-center">Editar usuário</h1>
         <input type="hidden" name="id" value="<?php echo $data['user']['id'] ?>">
         <div class="row">

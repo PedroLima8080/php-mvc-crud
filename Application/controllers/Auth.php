@@ -11,7 +11,7 @@ class Auth extends  Controller
         if (!$model->isLogged())
             $this->view('auth/register');
         else
-            header('Location: ../home/index');
+            redirect('home/index');
     }
 
     public function saveRegister($form)
@@ -22,10 +22,10 @@ class Auth extends  Controller
             if (isset($form['$_POST'])) {
                 $form = $form['$_POST'];
                 $model->register($form);
-                header('Location: ./login');
+                redirect('auth/login');
             }
         } else
-            header('Location: ../home/index');
+            redirect('home/index');
     }
 
     public function login()
@@ -35,7 +35,7 @@ class Auth extends  Controller
         if (!$model->isLogged())
             $this->view('auth/login');
         else
-            header('Location: ../home/index');
+            redirect('home/index');
     }
 
     public function auth($form)
@@ -47,15 +47,15 @@ class Auth extends  Controller
                 $form = $form['$_POST'];
     
                 if ($model->login($form)) {
-                    header('Location: ../home/index');
+                    redirect('home/index');
                     exit;
                 }
     
-                header('Location: ./login');
+                redirect('auth/login');
                 exit;
             }
         } else
-            header('Location: ../home/index');
+            redirect('home/index');
     }
 
     public function logout()
@@ -64,9 +64,10 @@ class Auth extends  Controller
 
         if ($model->isLogged()) {
             $model->logout();
-            header('Location: ./login');
-            exit;
-        } else
-            header('Location: ./login');
+        }
+
+        redirect('auth/login');
+        exit;
+
     }
 }

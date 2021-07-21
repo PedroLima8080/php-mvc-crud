@@ -1,5 +1,5 @@
 <div class="mt-5 w-50 mx-auto">
-    <form action="./auth" method="POST">
+    <form action='<?php echo redirectBlade('auth/auth') ?>' method="POST">
         <h1 class="text-center">Login</h1>
         <div class="row">
             <div class="form-group col-md-12 mt-3">
@@ -13,7 +13,7 @@
                 <input class="form-control" type="password" name="password" id="password">
             </div>
         </div>
-        <a href="./register" class="mt-2 d-block">Registre-se aqui!</a>
+        <a href='<?php echo redirectBlade('auth/register') ?>' class="mt-2 d-block">Registre-se aqui!</a>
         <div class="d-flex justify-content-center">
             <button type="submit" class="mt-5 btn btn-success">
                 Login

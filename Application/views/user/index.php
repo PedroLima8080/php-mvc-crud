@@ -6,14 +6,14 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="../home/index">Home</a>
+        <a class="nav-link" href='<?php echo redirectBlade('home/index') ?>'>Home</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="../user/index">Usuários</a>
+        <a class="nav-link" href='#'>Usuários</a>
       </li>
     </ul>
     <div>
-      <a class="text-danger btn btn-outline-danger" href="../auth/logout">Log out</a>
+      <a class="text-danger btn btn-outline-danger" href='<?php echo redirectBlade('auth/logout') ?>'>Log out</a>
     </div>
   </div>
 </nav>
@@ -35,10 +35,10 @@
                             <td>$user[id]</td>
                             <td>$user[name]</td>
                             <td>
-                                <a href='./destroy/$user[id]' class='btn btn-danger'>
+                                <a href='".redirectBlade('user/destroy/'.$user['id'].'')."' class='btn btn-danger'>
                                     <i class='fas fa-trash'></i>
                                 </a>
-                                <a href='./edit/$user[id]' class='btn btn-success'>
+                                <a href='".redirectBlade('user/edit/'.$user['id'].'')."' class='btn btn-success'>
                                     <i class='fas fa-pen'></i>
                                 </a>
                             </td>
@@ -49,7 +49,7 @@
     </tbody>
   </table>
 </div>
-<a href="./create">
+<a href='<?php echo redirectBlade('user/create') ?>'>
   <button class="create-btn">
     <i class="fas fa-plus"></i>
   </button>

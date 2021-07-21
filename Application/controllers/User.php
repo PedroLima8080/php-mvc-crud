@@ -10,7 +10,7 @@ class User extends Controller{
             $data['users'] = $model->getAll();
             $this->view('user/index', $data);
         }else
-            header('Location: ../auth/login');
+            redirect('auth/login');
     }
 
     public function destroy($params){
@@ -21,9 +21,9 @@ class User extends Controller{
 
             $model->destroy($id);
 
-            header('Location: ../index');
+            redirect('user/index');
         }else{
-            header('Location: ../../auth/login');
+            redirect('auth/login');
             exit;
         }
     }
@@ -39,13 +39,13 @@ class User extends Controller{
             if($data['user']){
                 $this->view('user/edit', $data);
             }else{
-                header('Location: ../index');
+                redirect('user/index');
                 exit;
             }
 
 
         }else{
-            header('Location: ../../auth/login');
+            redirect('auth/login');
             exit;
         }
     }
@@ -60,11 +60,11 @@ class User extends Controller{
 
                 $model->update($form);
     
-                header('Location: ./index');
+                redirect('user/index');
                 exit;
             }
         } else
-            header('Location: ../auth/login');
+            redirect('auth/login');
     }
 
     public function create(){
@@ -73,7 +73,7 @@ class User extends Controller{
         if($model->isLogged()){
             $this->view('user/create');
         }else{
-            header("Location: ../auth/login");
+            redirect('auth/login');
         }
     }
 
@@ -84,9 +84,9 @@ class User extends Controller{
             if (isset($form['$_POST'])) {
                 $form = $form['$_POST'];
                 $model->store($form);
-                header('Location: ./index');
+                redirect('user/index');
             }
         } else
-            header('Location: ../auth/login');
+            redirect('auth/login');
     }
 }

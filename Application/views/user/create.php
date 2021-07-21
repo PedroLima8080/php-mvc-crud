@@ -1,5 +1,5 @@
 <div class="mt-5 w-50 mx-auto">
-    <form action="./store" method="POST">
+    <form action='<?php echo redirectBlade('user/store') ?>' method="POST">
         <h1 class="text-center">Criar usuário</h1>
         <div class="row">
             <div class="form-group col-md-12 mt-3">

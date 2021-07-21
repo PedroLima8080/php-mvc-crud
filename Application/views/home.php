@@ -9,11 +9,11 @@
         <a class="nav-link" href="#">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="../user/index">Usuários</a>
+        <a class="nav-link" href='<?php echo redirectBlade('user/index') ?>'>Usuários</a>
       </li>
     </ul>
     <div>
-      <a class="text-danger btn btn-outline-danger" href="../auth/logout">Log out</a>
+      <a class="text-danger btn btn-outline-danger" href='<?php echo redirectBlade('auth/logout') ?>'>Log out</a>
     </div>
   </div>
 </nav>

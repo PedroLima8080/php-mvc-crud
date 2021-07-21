@@ -11,6 +11,6 @@ class Home extends Controller{
             $this->view('home', $data);
         }
         else
-            header('Location: ../auth/login');
+            redirect('auth/login');
     }
 }

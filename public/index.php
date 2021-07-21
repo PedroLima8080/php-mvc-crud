@@ -14,6 +14,7 @@
         require "../Application/core/App.php";
         require "../Application/core/Controller.php";
         require "../Application/core/Database.php";
+        require "../Application/utils/util.php";
         
         new App;
     ?>
