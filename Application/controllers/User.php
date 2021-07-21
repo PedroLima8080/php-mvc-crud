@@ -66,4 +66,27 @@ class User extends Controller{
         } else
             header('Location: ../auth/login');
     }
+
+    public function create(){
+        $model = $this->model("Users");
+
+        if($model->isLogged()){
+            $this->view('user/create');
+        }else{
+            header("Location: ../auth/login");
+        }
+    }
+
+    public function store($form){
+        $model = $this->model("Users");
+        
+        if ($model->isLogged()) {
+            if (isset($form['$_POST'])) {
+                $form = $form['$_POST'];
+                $model->store($form);
+                header('Location: ./index');
+            }
+        } else
+            header('Location: ../auth/login');
+    }
 }

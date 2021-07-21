@@ -18,19 +18,19 @@
   </div>
 </nav>
 <div class="mt-5 w-50 mx-auto">
-    <h2 class="text-center">Usuários</h2>
-    <hr class="mb-5 mt-1">
+  <h2 class="text-center">Usuários</h2>
+  <hr class="mb-5 mt-1">
 
-    <table class="table">
-        <thead>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Ações</th>
-        </thead>
-        <tbody>
-            <?php
-                foreach ($data['users'] as $user) {
-                    echo "
+  <table class="table">
+    <thead>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Ações</th>
+    </thead>
+    <tbody>
+      <?php
+      foreach ($data['users'] as $user) {
+        echo "
                         <tr>
                             <td>$user[id]</td>
                             <td>$user[name]</td>
@@ -44,8 +44,13 @@
                             </td>
                         </tr>
                     ";
-                }
-            ?>
-        </tbody>
-    </table>
+      }
+      ?>
+    </tbody>
+  </table>
 </div>
+<a href="./create">
+  <button class="create-btn">
+    <i class="fas fa-plus"></i>
+  </button>
+</a>

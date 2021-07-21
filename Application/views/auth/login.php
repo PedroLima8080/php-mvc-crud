@@ -13,7 +13,7 @@
                 <input class="form-control" type="password" name="password" id="password">
             </div>
         </div>
-        <a href="./create" class="mt-2 d-block">Registre-se aqui!</a>
+        <a href="./register" class="mt-2 d-block">Registre-se aqui!</a>
         <div class="d-flex justify-content-center">
             <button type="submit" class="mt-5 btn btn-success">
                 Login

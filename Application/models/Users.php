@@ -132,4 +132,20 @@ class Users{
     public function logout(){
         $_SESSION['user'] = null;
     }
+
+    public function store($form){
+        $form['password'] = md5($form['password']);
+
+        $db = new Database;
+        $db->conn->beginTransaction();
+
+        try {
+            $stmt = $db->conn->query("INSERT INTO users (name, email, password) VALUES ('$form[name]', '$form[email]', '$form[password]')");
+            $db->conn->commit();
+        } catch (PDOException $e) {
+            echo $e;
+            $db->conn->rollBack();
+            exit;
+        }
+    }
 }

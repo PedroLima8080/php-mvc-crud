@@ -4,7 +4,7 @@ use Application\core\Controller;
 
 class Auth extends  Controller
 {
-    public function create()
+    public function register()
     {
         $model = $this->model("Users");
         
@@ -14,7 +14,7 @@ class Auth extends  Controller
             header('Location: ../home/index');
     }
 
-    public function store($form)
+    public function saveRegister($form)
     {
         $model = $this->model("Users");
 
