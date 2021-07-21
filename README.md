@@ -7,6 +7,6 @@
 <p>Após clonar o repositório em seu compilador Apache ou outro, você deve inserir seus dados do banco de dados em: Application/core/Database.php e rodar o script de banco de dados localizado em: Application/database/users.sql</p>
 <hr>
 <h3>Observação</h3>
-<p>No decorrer do projeto percebi que da para reutilizar este código como um framework e desenvolver projetos em cima dele utilizando o padrão MVC.</p>
-<p>Basta apenas alguns ajustes como: limpar as pastas views, controllers e database. A partir disso, só "codar" em cima :D</p>
+<p>No decorrer do projeto percebi que é possível reutilizar este código como um framework e desenvolver projetos em cima dele utilizando o padrão MVC.</p>
+<p>Basta apenas alguns ajustes como: limpar as pastas views, controllers, models e database. A partir disso, só "codar" em cima :D</p>
 <p>Lembrando que não é um framework "COMPLETASSO" e sim apenas o "princípio" de um!</p>
