@@ -7,8 +7,8 @@ use PDOException;
 
 class Database extends PDO{
     private $db_name = 'php_mvc';
-    private $db_pass = '';
     private $db_user = 'root';
+    private $db_pass = '';
     private $db_host = 'localhost';
     public $conn;
 
